@@ -34,38 +34,50 @@ body{
 .header--title__primary{
     font-size: 4rem;
     font-weight: 400;
+    line-height: calc(1.2*4rem);
 }
 
 .header--title__secondary{
     font-size: 3rem;
     font-weight: 400;
+    line-height: calc(1.2*3rem);
+}
+
+.header--title__accent{
+    color: var(--secondary-color);
 }
 
 .tasks{
-    padding: 5rem 15rem;
+    padding: 10rem 15rem;
     display: grid;
-    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 3rem;
 }
 
 .tasks--title{
-    font-size: 4rem;
+    font-size: 2rem;
     font-weight: 300;
     color: var(--primary-color);
+    margin-bottom: 2rem;
 }
 
 .tasks--container{
     padding: 1rem 0;
-    display: inherit;
+    /* display: inherit;
     justify-content: center;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 1rem;
+    grid-gap: 1rem; */
 }
 
 .tasks--tab{
     padding: 1rem 2rem;
+    margin-bottom: 1.5rem;
     background-color: var(--yellow-color);
     border-radius: .5rem;
-    height: 20vh;
+}
+
+.tasks--tab:nth-child(4){
+    background-color: var(--secondary-color);
 }
 
 .tasks--body{
@@ -73,12 +85,30 @@ body{
     font-weight: 300;
     color: var(--primary-color);
     display: grid;
-    grid-template-columns: auto auto;
-    justify-content: space-between;
-    align-items: center;
+    grid-template-rows: 1fr 1fr;
+    min-height: 10vh;
+    /* grid-gap: 1rem; */
 }
 
-.tasks--checkbox{
+.tasks--content{
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.3rem;
+}
+
+.tasks--info{
+    display: grid;
+    grid-template-columns: max-content max-content;
+    /* grid-gap: 1rem; */
+    justify-content: space-between;
+    align-self: end;
+}
+
+.tasks--status, .tasks--date{
+    font-size: .7rem;
+}
+
+/* .tasks--checkbox{
     position: absolute;
     opacity: 0;
 }
@@ -104,4 +134,4 @@ body{
 
 .tasks--checkbox:focus + label:before{
     background-color: var(--secondary-color);
-}
+} */

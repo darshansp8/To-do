@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: #1a535c;
+    --secondary-color: #4ecdc4;
+    --white-color: #f7fff7;
+    --tertiary-color: #ff6b6b;
+    --yellow-color: #ffe66d;
+}
+
+body{
+    font-size: 62.5%;
+    background-color: var(--white-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+.header{
+    display: grid;
+    padding: 5rem 15rem;
+    align-items: center;
+    height: 20vh;
+}
+
+.header--title{
+    color: var(--primary-color);
+    letter-spacing: .02rem;
+}
+
+.header--title__primary{
+    font-size: 4rem;
+    font-weight: 400;
+}
+
+.header--title__secondary{
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+.tasks{
+    padding: 5rem 15rem;
+    display: grid;
+    align-items: center;
+}
+
+.tasks--title{
+    font-size: 4rem;
+    font-weight: 300;
+    color: var(--primary-color);
+}
+
+.tasks--container{
+    padding: 1rem 0;
+    display: inherit;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+}
+
+.tasks--tab{
+    padding: 1rem 2rem;
+    background-color: var(--yellow-color);
+    border-radius: .5rem;
+    height: 20vh;
+}
+
+.tasks--body{
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--primary-color);
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tasks--checkbox{
+    position: absolute;
+    opacity: 0;
+}
+
+.tasks--checkbox + label{
+    position: relative;
+    cursor: pointer;
+}
+
+.tasks--checkbox + label:before{
+    content: "";
+    margin-right: .1rem;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--white-color);
+}
+
+.tasks--checkbox:hover + label:before{
+    background-color: var(--secondary-color);
+}
+
+.tasks--checkbox:focus + label:before{
+    background-color: var(--secondary-color);
+}

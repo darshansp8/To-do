@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'style.css'%}">
+    <title>To-do</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header--container">
+            <h1 class="header--title header--title__primary">Hey James,<h1>
+            <h2 class="header--title header--title__secondary"> this is your to-do list</h2>
+        </div>
+    </header>
+    <section class="tasks">
+        <!-- <h2 class="tasks--title">Current Tasks</h2> -->
+        <div class="tasks--container">
+            <div class="tasks--tab">
+                <div class="tasks--body">
+                    <span class="tasks--heading">Go to gym.</span>
+                    <form action="">
+                        <input type="checkbox" name="checkbox" id="checked" class="tasks--checkbox">
+                        <label for="checked"><span>Done</span></label>
+                    </form>
+                </div>
+            </div>
+            <div class="tasks--tab">
+                <div class="tasks--body">
+                    <span class="tasks--heading">Go to gym.</span>
+                    <form action="">
+                        <input type="checkbox" name="checkbox" id="checked" class="tasks--checkbox">
+                        <label for="checked"><span>Done</span></label>
+                    </form>
+                </div>
+            </div>
+            <div class="tasks--tab">
+                <div class="tasks--body">
+                    <span class="tasks--heading">Go to gym.</span>
+                    <form action="">
+                        <input type="checkbox" name="checkbox" id="checked" class="tasks--checkbox">
+                        <label for="checked"><span>Done</span></label>
+                    </form>
+                </div>
+            </div>
+            <div class="tasks--tab">
+                <div class="tasks--body">
+                    <span class="tasks--heading">Go to gym.</span>
+                    <form action="">
+                        <input type="checkbox" name="checkbox" id="checked" class="tasks--checkbox">
+                        <label for="checked"><span>Done</span></label>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

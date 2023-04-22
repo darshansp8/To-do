@@ -21,11 +21,19 @@
         <div class="tasks--container">
             <h2 class="tasks--title">Today</h2>
             {% for task in tasks %}
-            <div class="tasks--tab">
+            {% if task.task_status == True %}
+            <div class="tasks--tab tasks--tab__success">
+            {% else %}
+            <div class="tasks--tab tasks--tab__ongoing">
+            {% endif %}    
                 <div class="tasks--body">
                     <p class="tasks--content">{{ task.task_desc }}</p>
                     <div class="tasks--info">
-                        <div class="tasks--status">{{ task.task_status }}</div>
+                        {% if task.task_status == False %}
+                        <div class="tasks--status">Pending</div>
+                        {% else %}
+                        <div class="tasks--status">Completed</div>
+                        {% endif %}
                         <div class="tasks--date">{{ task.task_created }}</div>
                     </div>
                 </div>

@@ -12,7 +12,7 @@
 <body>
     <header class="header">
         <div class="header--container">
-            <h1 class="header--title header--title__primary">Hey <span class="header--title__accent">James</span>,<h1>
+            <h1 class="header--title header--title__primary">Hey <span class="header--title__accent">{{user.name}}</span>,</h1>
             <h2 class="header--title header--title__secondary"> this is your to-do list</h2>
         </div>
     </header>
@@ -20,120 +20,131 @@
         <!-- <h2 class="tasks--title">Current Tasks</h2> -->
         <div class="tasks--container">
             <h2 class="tasks--title">Today</h2>
+            {% for task in tasks %}
             <div class="tasks--tab">
                 <div class="tasks--body">
-                    <p class="tasks--content">Make a visit to GP.</p>
+                    <p class="tasks--content">{{ task.task_desc }}</p>
                     <div class="tasks--info">
-                        <div class="tasks--status">Pending</div>
-                        <div class="tasks--date">23.04.2023</div>
+                        <div class="tasks--status">{{ task.task_status }}</div>
+                        <div class="tasks--date">{{ task.task_created }}</div>
                     </div>
                 </div>
             </div>
-            <div class="tasks--tab">
-                <div class="tasks--body">
-                    <p class="tasks--content">Groceries to buy: Onion, Tomato, Coriander, Rice, Wheat Flour</p>
-                    <div class="tasks--info">
-                        <div class="tasks--status">Pending</div>
-                        <div class="tasks--date">23.04.2023</div>
-                    </div>
-                </div>
-            </div>
-            <div class="tasks--tab">
-                <div class="tasks--body">
-                    <p class="tasks--content">Make a visit to GP.</p>
-                    <div class="tasks--info">
-                        <div class="tasks--status">Pending</div>
-                        <div class="tasks--date">23.04.2023</div>
-                    </div>
-                </div>
-            </div>
-            <div class="tasks--tab">
-                <div class="tasks--body">
-                    <p class="tasks--content">Make a visit to GP.</p>
-                    <div class="tasks--info">
-                        <div class="tasks--status">Pending</div>
-                        <div class="tasks--date">23.04.2023</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="tasks--container">
-            <h2 class="tasks--title">Tomorrow</h2>
-            <div class="tasks--tab">
-                <div class="tasks--body">
-                    <p class="tasks--content">Make a visit to GP.</p>
-                    <div class="tasks--info">
-                        <div class="tasks--status">Pending</div>
-                        <div class="tasks--date">23.04.2023</div>
-                    </div>
-                </div>
-            </div>
-            <div class="tasks--tab">
-                <div class="tasks--body">
-                    <p class="tasks--content">Make a visit to GP.</p>
-                    <div class="tasks--info">
-                        <div class="tasks--status">Pending</div>
-                        <div class="tasks--date">23.04.2023</div>
-                    </div>
-                </div>
-            </div>
-            <div class="tasks--tab">
-                <div class="tasks--body">
-                    <p class="tasks--content">Make a visit to GP.</p>
-                    <div class="tasks--info">
-                        <div class="tasks--status">Pending</div>
-                        <div class="tasks--date">23.04.2023</div>
-                    </div>
-                </div>
-            </div>
-            <div class="tasks--tab">
-                <div class="tasks--body">
-                    <p class="tasks--content">Make a visit to GP.</p>
-                    <div class="tasks--info">
-                        <div class="tasks--status">Pending</div>
-                        <div class="tasks--date">23.04.2023</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="tasks--container">
-            <h2 class="tasks--title">Upcoming</h2>
-            <div class="tasks--tab">
-                <div class="tasks--body">
-                    <p class="tasks--content">Make a visit to GP.</p>
-                    <div class="tasks--info">
-                        <div class="tasks--status">Pending</div>
-                        <div class="tasks--date">23.04.2023</div>
-                    </div>
-                </div>
-            </div>
-            <div class="tasks--tab">
-                <div class="tasks--body">
-                    <p class="tasks--content">Make a visit to GP.</p>
-                    <div class="tasks--info">
-                        <div class="tasks--status">Pending</div>
-                        <div class="tasks--date">23.04.2023</div>
-                    </div>
-                </div>
-            </div>
-            <div class="tasks--tab">
-                <div class="tasks--body">
-                    <p class="tasks--content">Make a visit to GP.</p>
-                    <div class="tasks--info">
-                        <div class="tasks--status">Pending</div>
-                        <div class="tasks--date">23.04.2023</div>
-                    </div>
-                </div>
-            </div>
-            <div class="tasks--tab">
-                <div class="tasks--body">
-                    <p class="tasks--content">Make a visit to GP.</p>
-                    <div class="tasks--info">
-                        <div class="tasks--status">Pending</div>
-                        <div class="tasks--date">23.04.2023</div>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
+<!--            <div class="tasks&#45;&#45;tab">-->
+<!--                <div class="tasks&#45;&#45;body">-->
+<!--                    <p class="tasks&#45;&#45;content">Make a visit to GP.</p>-->
+<!--                    <div class="tasks&#45;&#45;info">-->
+<!--                        <div class="tasks&#45;&#45;status">Pending</div>-->
+<!--                        <div class="tasks&#45;&#45;date">23.04.2023</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="tasks&#45;&#45;tab">-->
+<!--                <div class="tasks&#45;&#45;body">-->
+<!--                    <p class="tasks&#45;&#45;content">Groceries to buy: Onion, Tomato, Coriander, Rice, Wheat Flour</p>-->
+<!--                    <div class="tasks&#45;&#45;info">-->
+<!--                        <div class="tasks&#45;&#45;status">Pending</div>-->
+<!--                        <div class="tasks&#45;&#45;date">23.04.2023</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="tasks&#45;&#45;tab">-->
+<!--                <div class="tasks&#45;&#45;body">-->
+<!--                    <p class="tasks&#45;&#45;content">Make a visit to GP.</p>-->
+<!--                    <div class="tasks&#45;&#45;info">-->
+<!--                        <div class="tasks&#45;&#45;status">Pending</div>-->
+<!--                        <div class="tasks&#45;&#45;date">23.04.2023</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="tasks&#45;&#45;tab">-->
+<!--                <div class="tasks&#45;&#45;body">-->
+<!--                    <p class="tasks&#45;&#45;content">Make a visit to GP.</p>-->
+<!--                    <div class="tasks&#45;&#45;info">-->
+<!--                        <div class="tasks&#45;&#45;status">Pending</div>-->
+<!--                        <div class="tasks&#45;&#45;date">23.04.2023</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="tasks&#45;&#45;container">-->
+<!--            <h2 class="tasks&#45;&#45;title">Tomorrow</h2>-->
+<!--            <div class="tasks&#45;&#45;tab">-->
+<!--                <div class="tasks&#45;&#45;body">-->
+<!--                    <p class="tasks&#45;&#45;content">Make a visit to GP.</p>-->
+<!--                    <div class="tasks&#45;&#45;info">-->
+<!--                        <div class="tasks&#45;&#45;status">Pending</div>-->
+<!--                        <div class="tasks&#45;&#45;date">23.04.2023</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="tasks&#45;&#45;tab">-->
+<!--                <div class="tasks&#45;&#45;body">-->
+<!--                    <p class="tasks&#45;&#45;content">Make a visit to GP.</p>-->
+<!--                    <div class="tasks&#45;&#45;info">-->
+<!--                        <div class="tasks&#45;&#45;status">Pending</div>-->
+<!--                        <div class="tasks&#45;&#45;date">23.04.2023</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="tasks&#45;&#45;tab">-->
+<!--                <div class="tasks&#45;&#45;body">-->
+<!--                    <p class="tasks&#45;&#45;content">Make a visit to GP.</p>-->
+<!--                    <div class="tasks&#45;&#45;info">-->
+<!--                        <div class="tasks&#45;&#45;status">Pending</div>-->
+<!--                        <div class="tasks&#45;&#45;date">23.04.2023</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="tasks&#45;&#45;tab">-->
+<!--                <div class="tasks&#45;&#45;body">-->
+<!--                    <p class="tasks&#45;&#45;content">Make a visit to GP.</p>-->
+<!--                    <div class="tasks&#45;&#45;info">-->
+<!--                        <div class="tasks&#45;&#45;status">Pending</div>-->
+<!--                        <div class="tasks&#45;&#45;date">23.04.2023</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="tasks&#45;&#45;container">-->
+<!--            <h2 class="tasks&#45;&#45;title">Upcoming</h2>-->
+<!--            <div class="tasks&#45;&#45;tab">-->
+<!--                <div class="tasks&#45;&#45;body">-->
+<!--                    <p class="tasks&#45;&#45;content">Make a visit to GP.</p>-->
+<!--                    <div class="tasks&#45;&#45;info">-->
+<!--                        <div class="tasks&#45;&#45;status">Pending</div>-->
+<!--                        <div class="tasks&#45;&#45;date">23.04.2023</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="tasks&#45;&#45;tab">-->
+<!--                <div class="tasks&#45;&#45;body">-->
+<!--                    <p class="tasks&#45;&#45;content">Make a visit to GP.</p>-->
+<!--                    <div class="tasks&#45;&#45;info">-->
+<!--                        <div class="tasks&#45;&#45;status">Pending</div>-->
+<!--                        <div class="tasks&#45;&#45;date">23.04.2023</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="tasks&#45;&#45;tab">-->
+<!--                <div class="tasks&#45;&#45;body">-->
+<!--                    <p class="tasks&#45;&#45;content">Make a visit to GP.</p>-->
+<!--                    <div class="tasks&#45;&#45;info">-->
+<!--                        <div class="tasks&#45;&#45;status">Pending</div>-->
+<!--                        <div class="tasks&#45;&#45;date">23.04.2023</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="tasks&#45;&#45;tab">-->
+<!--                <div class="tasks&#45;&#45;body">-->
+<!--                    <p class="tasks&#45;&#45;content">Make a visit to GP.</p>-->
+<!--                    <div class="tasks&#45;&#45;info">-->
+<!--                        <div class="tasks&#45;&#45;status">Pending</div>-->
+<!--                        <div class="tasks&#45;&#45;date">23.04.2023</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
         </div>
     </section>
 </body>

@@ -61,6 +61,12 @@ body{
     margin-bottom: 2rem;
 }
 
+.tasks--message{
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--primary-color);
+}
+
 .tasks--container{
     padding: 1rem 0;
     /* display: inherit;

@@ -13,6 +13,10 @@
     --yellow-color: #ffe66d;
 }
 
+.mr-sm{
+    margin-right: .1rem;
+}
+
 body{
     font-size: 62.5%;
     background-color: var(--white-color);
@@ -80,6 +84,13 @@ body{
     margin-bottom: 1.5rem;
     /* background-color: var(--yellow-color); */
     border-radius: .5rem;
+    transition: all .2s ease-in-out;
+}
+
+.tasks--tab:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+    box-shadow: -1rem 1rem 3rem var(--yellow-color);
 }
 
 .tasks--tab__ongoing{
@@ -99,7 +110,10 @@ body{
     font-weight: 300;
     color: var(--primary-color);
     display: grid;
+    grid-template-columns: auto max-content;
     grid-template-rows: 1fr 1fr;
+    /* justify-content: space-between; */
+    align-self: end;
     min-height: 10vh;
     /* grid-gap: 1rem; */
 }
@@ -112,14 +126,33 @@ body{
 
 .tasks--info{
     display: grid;
+    grid-column-start: 1;
+    grid-column-end: 3;
     grid-template-columns: max-content max-content;
     /* grid-gap: 1rem; */
     justify-content: space-between;
     align-self: end;
 }
 
-.tasks--status, .tasks--date{
+.tasks--status, .tasks--date, .tasks--action{
     font-size: .7rem;
+}
+
+.tasks--action{
+    visibility: hidden;
+    transition: all .2s ease-in-out;
+}
+
+.tasks--tab:hover .tasks--action{
+    visibility: visible;
+}
+
+.tasks--action__delete{
+    color: var(--primary-color);
+}
+
+.tasks--action__edit{
+    color: var(--primary-color);
 }
 
 /* .tasks--checkbox{

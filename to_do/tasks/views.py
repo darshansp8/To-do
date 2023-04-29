@@ -13,7 +13,7 @@ def index(request):
     end_week = start_week + datetime.timedelta(7)
     tasks_today = Tasks.objects.filter(task_created=current_date)
     tasks_tomorrow = Tasks.objects.filter(task_created=current_date+datetime.timedelta(days=1))
-    tasks_week = Tasks.objects.filter(task_created__range=[start_week, end_week])
+    tasks_week = Tasks.objects.filter(task_created__range=[current_date, end_week])
     filtered_tasks_week = [task for task in tasks_week if task not in tasks_today]
 
     no_task_today = False if tasks_today else True

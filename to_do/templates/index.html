@@ -6,7 +6,13 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {% load static %}
+    {% load icons %}
     <link rel="stylesheet" href="{%static 'style.css'%}">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+>
     <title>To-do</title>
 </head>
 <body>
@@ -21,7 +27,7 @@
         <div class="tasks--container">
             <h2 class="tasks--title">Today</h2>
             {% if no_task_today %}
-            <p>No tasks</p>
+            <p class="tasks--message">Oops...You have no tasks scheduled for today!!!!</p>
             {% else %}
                 {% for task in tasks_today %}
                     {% if task.task_status == True %}
@@ -31,12 +37,17 @@
                     {% endif %}    
                         <div class="tasks--body">
                             <p class="tasks--content">{{ task.task_desc }}</p>
+                            <div class="tasks--action">
+                                <span class="tasks--action__delete mr-sm">{% icon 'bin' extra_classes='fa-lg' %}</span>
+                                <span class="tasks--action__edit">{% icon 'edit' extra_classes='fa-lg' %}</span>
+                            </div>
                             <div class="tasks--info">
                                 {% if task.task_status == False %}
                                 <div class="tasks--status">Pending</div>
                                 {% else %}
                                 <div class="tasks--status">Completed</div>
                                 {% endif %}
+                                <!-- <div class="tasks--action">{% icon 'bin' %} {% icon 'edit' %}</div> -->
                                 <div class="tasks--date">{{ task.task_created }}</div>
                             </div>
                         </div>

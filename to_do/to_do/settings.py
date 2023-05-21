@@ -126,7 +126,8 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 DJANGO_ICONS = {
     "ICONS": {
         "bin": {"name": "fa fa-trash"},
-        "edit": {"name": "fa fa-pencil"}
+        "edit": {"name": "fa fa-pencil"},
+        "add": {"name": "fa fa-plus"},
     }
 }
 

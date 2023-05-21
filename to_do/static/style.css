@@ -25,10 +25,92 @@ body{
 
 .header{
     display: grid;
+    grid-template-columns: minmax(max-content, 1fr) 1fr;
     padding: 5rem 15rem;
+    justify-content: space-between;
     align-items: center;
     height: 20vh;
+    position: relative;
 }
+
+.header--body{
+    justify-self: end;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.header--button{
+    border: none;
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: 200;
+    cursor: pointer;
+    position: relative;
+}
+
+.header--button::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: .2rem;
+    width: 0;
+    background-color: var(--secondary-color);
+    z-index: 1;
+    transition: all .5s ease-in-out;
+}
+
+.header--button:hover::before{
+    width: 100%;
+}
+
+.header--icon{
+    font-size: 2rem;
+    font-weight: 200;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    height: 5rem;
+    width: 5rem;
+    border-radius: 100%;
+    padding: .5rem;
+    position: relative;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.header--icon:hover{
+    animation: scale .5s;
+}
+
+@keyframes scale {
+    50%{
+        transform: scale(.9);
+    }
+    80%{
+        transform: scale(1.2);
+    }
+    99%{
+        transform: scale(1.1)
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.fa{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* .header--button:hover .fa{
+    transform: rotate(-135deg);
+    transform-origin: center center;
+} */
 
 .header--title{
     color: var(--primary-color);
@@ -154,6 +236,40 @@ body{
 .tasks--action__edit{
     color: var(--primary-color);
 }
+
+
+.modal{
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    /* padding: 1rem; */
+    background-color: rgba(var(--primary-color), .8);
+    /* -webkit-backdrop-filter: brightness(sepia); */
+    backdrop-filter: blur(.5rem);
+}
+
+.modal--hide{
+    display: none;
+}
+
+.modal--content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--yellow-color);
+    border-radius: .5rem;
+    padding: 1rem;
+}
+
+.close-modal{
+    cursor: pointer;
+}
+
+
 
 /* .tasks--checkbox{
     position: absolute;

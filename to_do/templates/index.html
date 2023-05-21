@@ -11,8 +11,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-      crossorigin="anonymous"
->
+      crossorigin="anonymous">
     <title>To-do</title>
 </head>
 <body>
@@ -21,7 +20,20 @@
             <h1 class="header--title header--title__primary">Hey <span class="header--title__accent">{{user.name}}</span>,</h1>
             <h2 class="header--title header--title__secondary"> this is your to-do list</h2>
         </div>
+        <div class="header--body">
+            <div class="header--icon mr-sm open-modal">{% icon 'add' %}</div>
+            <!-- <button 
+                class="header--button" 
+                type="submit">
+                Add Tasks</button> -->
+        </div>
     </header>
+    <div class="modal modal--hide" id="modal">
+        <div class="modal--content">
+            <h2 class="modal--title">Add a task</h2>
+            <button class="close-modal">Close</button>
+        </div>
+    </div> 
     <section class="tasks">
         <!-- <h2 class="tasks--title">Current Tasks</h2> -->
         <div class="tasks--container">
@@ -109,5 +121,6 @@
             {% endif %}
         </div>
     </section>
+    <script src="{%static 'index.js'%}"></script>
 </body>
 </html>

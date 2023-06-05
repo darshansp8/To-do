@@ -33,3 +33,16 @@ def index(request):
     }
     return render(request, 'index.html', context)
 
+
+def add_task(request):
+    email = request.POST['email']
+    task_description = request.POST['task_desc']
+    due_on = request.POST['due_on']
+
+    user = Users.objects.get(email=email)
+
+    new_task = Tasks.objects.create(email=user, task_desc=task_description, task_created=due_on)
+    new_task.save()
+
+    return HttpResponse("Task added successfully!!!")
+

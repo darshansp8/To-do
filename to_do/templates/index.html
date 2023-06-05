@@ -21,7 +21,7 @@
             <h2 class="header--title header--title__secondary"> this is your to-do list</h2>
         </div>
         <div class="header--body">
-            <div class="header--icon mr-sm open-modal">{% icon 'add' %}</div>
+            <button class="header--icon mr-sm open-modal" onclick="openModal()">{% icon 'add' %}</button>
             <!-- <button 
                 class="header--button" 
                 type="submit">
@@ -30,8 +30,21 @@
     </header>
     <div class="modal modal--hide" id="modal">
         <div class="modal--content">
-            <h2 class="modal--title">Add a task</h2>
-            <button class="close-modal">Close</button>
+            <div class="modal--header">
+                <h2 class="modal--title">Add a task</h2>
+                <button class="modal--close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal--body">
+                <form class="mt-medium" id="task--form">
+                    {% csrf_token %}
+                    <input type="hidden" id="user_email" value="{{user.email}}"/>
+                    <label for="taskDesc">Description</label>
+                    <input type="text" id="taskDesc" name="taskDesc" maxlength="200" placeholder="Eg. Go to gym."/>
+                    <label for="taskDueOn">Due On</label>
+                    <input type="date" name="taskDueOn" id="taskDueOn">
+                    <button class="modal--button mt" type="submit">Add Task</button>
+                </form>
+            </div>
         </div>
     </div> 
     <section class="tasks">
@@ -119,8 +132,9 @@
                     </div>
                 {% endfor %}
             {% endif %}
-        </div>
+       </div>
     </section>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin></script>
     <script src="{%static 'index.js'%}"></script>
 </body>
 </html>
